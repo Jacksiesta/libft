@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jherrald <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 20:44:12 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/17 15:58:04 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:50:19 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ft_bzero(str, size);
 	return ((void*)str);
-	
 }

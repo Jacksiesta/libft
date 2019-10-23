@@ -6,28 +6,25 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 19:36:43 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/17 17:26:01 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/23 13:44:27 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		x;
-	char	*dest;
+	unsigned int		x;
+	char				*copy;
 
-	dest = malloc(sizeof(char) * (len + 1));
 	x = 0;
-	if (s == NULL)
+	if (!s || !(copy = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	while (s[start])
+	while (x < len)
 	{
-		dest[x] = s[start];
+		copy[x] = s[x + start];
 		x++;
-		start++;
 	}
-	dest[x] = '\0';
-	return (dest);
+	copy[x] = '\0';
+	return (copy);
 }

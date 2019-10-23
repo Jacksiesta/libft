@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:53:02 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/18 18:01:30 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/22 18:12:32 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	int long	num;
-	
+
 	num = (int long)n;
 	if (num < 0)
 	{

@@ -6,47 +6,73 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 12:37:39 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/17 17:08:12 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/23 18:48:04 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_is_char_sep(char const *s, char c)
+static int		ft_nbr_words(const char *s, char c)
 {
-	int x;
-	int n;
+	int i;
+
+	i = 1;
+	while (*s)
+	{
+		if (*s == c)
+		{
+			s++;
+			continue ;
+		}
+		i++;
+		while (*s && *s != c)
+			s++;
+	}
+	return (i);
+}
+
+static char		*ft_strndup(const char *s1, int y)
+{
+	int		x;
+	char	*target;
 
 	x = 0;
-	n = 0;
-	while (s[x + n] != '\0')
+	if (!(target = malloc(sizeof(char) * (y + 1))))
+		return (NULL);
+	while (x < y)
 	{
-		if (s[x + n] == c)
-		{
-			while (s[x + n++] == c)
-				return (1);
-		}
+		target[x] = s1[x];
 		x++;
 	}
-	return (0);
+	target[x] = '\0';
+	return (target);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		x;
-	int		word_nbr;
 	char	**new;
+	int		x;
+	int		y;
 
-	new = (char **)malloc(sizeof(char) * word_nbr);
-	word_nbr = 1;
-	x = 0;
-	while (ft_is_char_sep(s, c))
+	y = 0;
+	if (!s)
+		return (NULL);
+	if (!(new = (char **)malloc(sizeof(char *) * ft_nbr_words(s, c) + 1)))
+		return (NULL);
+	while (*s)
 	{
-		x = x;
-		new[word_nbr][x] = s[x];
-		x++;
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			x = 0;
+			while (s[x] && s[x] != c)
+				x++;
+			if (!(new[y++] = ft_strndup(s, x)))
+				return (NULL);
+			s += x;
+		}
 	}
-	new[word_nbr] = (char *)malloc(sizeof(char) * (x + 1));
-	new[word_nbr++][x] = '\0';
+	new[y] = 0;
 	return (new);
 }
