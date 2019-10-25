@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 13:43:54 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/23 19:58:20 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/25 13:06:04 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ static int	ft_check(char const c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	char	*new;
 	size_t	len;
-	size_t 	x;
+	size_t	x;
 
 	if (!s1 || !set)
 		return (0);
@@ -35,12 +35,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	x = 0;
 	while (ft_check(s1[x], set))
 		x++;
-	while (ft_check(s1[len], set))
+	while (ft_check(s1[len - 1], set))
 		len--;
 	len = len - x;
 	new = ft_substr(s1, x, len);
 	if (new == 0)
-		return ("\0");
+		return (NULL);
 	new[len] = '\0';
 	return (new);
 }

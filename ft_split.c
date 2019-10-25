@@ -6,13 +6,13 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 12:37:39 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/23 18:48:04 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/25 16:13:24 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_nbr_words(const char *s, char c)
+static int		n_word(const char *s, char c)
 {
 	int i;
 
@@ -48,16 +48,28 @@ static char		*ft_strndup(const char *s1, int y)
 	return (target);
 }
 
-char	**ft_split(char const *s, char c)
+static void		*ft_free(char **s)
+{
+	int x;
+
+	x = 0;
+	while (s[x] != '\0')
+	{
+		free(s[x]);
+		x++;
+	}
+	free(s);
+	return (NULL);
+}
+
+char			**ft_split(char const *s, char c)
 {
 	char	**new;
 	int		x;
 	int		y;
 
 	y = 0;
-	if (!s)
-		return (NULL);
-	if (!(new = (char **)malloc(sizeof(char *) * ft_nbr_words(s, c) + 1)))
+	if (!s || (!(new = (char **)malloc(sizeof(char *) * n_word(s, c) + 1))))
 		return (NULL);
 	while (*s)
 	{
@@ -69,7 +81,7 @@ char	**ft_split(char const *s, char c)
 			while (s[x] && s[x] != c)
 				x++;
 			if (!(new[y++] = ft_strndup(s, x)))
-				return (NULL);
+				return (ft_free(new));
 			s += x;
 		}
 	}
