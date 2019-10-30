@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 09:47:30 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/23 20:17:56 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/30 18:23:19 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int					x;
-	unsigned long long	nb;
-	int					symb;
+	int						x;
+	unsigned long long int	nb;
+	int						symb;
 
 	x = 0;
 	nb = 0;
@@ -36,5 +36,5 @@ int	ft_atoi(const char *str)
 			return ((symb + 1) / -2);
 		x++;
 	}
-	return (nb * symb);
+	return ((int)(nb * symb));
 }

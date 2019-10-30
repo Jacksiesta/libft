@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:28:08 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/24 15:01:53 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/10/29 12:45:25 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	x;
-	int				resultat;
+	size_t	x;
+	int		resultat;
 
 	resultat = 0;
 	x = 0;
