@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 09:47:30 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/30 18:23:19 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/11/04 18:27:25 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 	while (str[x] >= '0' && str[x] <= '9')
 	{
 		nb = (nb * 10) + (str[x] - 48);
-		if (nb > 9223372036854775807)
+		if (nb > LONG_MAX)
 			return ((symb + 1) / -2);
 		x++;
 	}

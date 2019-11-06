@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 12:37:39 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/31 18:18:47 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/11/04 12:39:53 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char			**ft_split(char const *s, char c)
 	int		y;
 
 	y = 0;
-	if (!s || (!(new = (char **)malloc(sizeof(char *) * n_word(s, c) + 1))))
+	if (!s || (!(new = (char **)malloc(sizeof(char *) * (n_word(s, c) + 1)))))
 		return (NULL);
 	while (*s)
 	{

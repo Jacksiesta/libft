@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 15:18:00 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/17 20:32:32 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/11/04 12:27:10 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (fd >= 0)
+	{
+		write(fd, &c, 1);
+	}
 }

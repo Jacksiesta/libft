@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 19:36:43 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/30 18:06:52 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:38:30 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s) - (size_t)start;
 	if ((size_t)start > ft_strlen(s))
 		len = 0;
-	if (!(copy = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(copy = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	x = 0;
 	while (x < len)

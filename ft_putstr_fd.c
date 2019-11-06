@@ -6,7 +6,7 @@
 /*   By: jherrald <jherrald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:29:25 by jherrald          #+#    #+#             */
-/*   Updated: 2019/10/18 19:08:40 by jherrald         ###   ########.fr       */
+/*   Updated: 2019/11/04 12:28:13 by jherrald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
+	if (s && fd >= 0)
 	{
 		while (*s != '\0')
 		{
